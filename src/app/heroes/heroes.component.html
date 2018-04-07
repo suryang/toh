@@ -10,14 +10,4 @@
   </li>
 </ul>
 
-<!-- *ngIf 돔이 있거나 없거나 -->
-<div *ngIf="selectedHero">
-  <h2>{{selectedHero.name | uppercase}}</h2>
-  <div><span>id: </span>{{selectedHero.id}}</div>
-  <div>
-    <label>name :
-      <input [(ngModel)]="selectedHero.name" placeholder="name">
-    </label>
-  </div>
-</div>
 
