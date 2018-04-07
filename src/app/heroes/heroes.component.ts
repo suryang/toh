@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Hero} from '../hero';
-import {HEROES} from '../HEROES';
+// import {HEROES} from '../HEROES';
 import {HeroService} from '../hero.service';
 
 
@@ -36,7 +36,12 @@ export class HeroesComponent implements OnInit {
     // const heroService = new HeroService();
     // this.heroes = heroService.getHeroes();
 
-    this.heroes = this.heroService.getHeroes();
+    // 비동기로 바꾸자
+    // 앵귤에서는 http를 전부 다 Observal을 이용한다.
+    this.heroService.getHeroes()
+      .subscribe(data => {
+        this.heroes = data;
+      });
 
   }
 
